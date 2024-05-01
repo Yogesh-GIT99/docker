@@ -21,11 +21,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Build mynth-account container
+      - name: Build hello-world container
         run: docker build -t docyogid/yog .
 
       - name: Publish container
         run: |
           TAG=$(git rev-parse --short HEAD)
+          docker tag docyogid/yog docyogid/yog:$TAG
           docker push docyogid/yog:$TAG
         if: github.ref == 'refs/heads/main'
