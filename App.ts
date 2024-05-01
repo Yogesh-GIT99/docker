@@ -15,7 +15,7 @@ let todos: Todo[] = [
 ];
 
 app.get("/", (req: Request, res: Response) => {
-    res.send("Hello World");
+    res.send("Hello Worlds");
 });
 
 
